@@ -130,6 +130,11 @@ namespace Hangman
             if(copyCurrent.Equals(currentWord))
             {
                 lblResult.Text = "You Win!!";
+                foreach (Button b in Controls.OfType<Button>().Where(x => x.Name != "restart"))
+                {
+                    b.Enabled = false;
+                }
+
             }
 
         }
