@@ -18,6 +18,7 @@ namespace Hangman
 {
     public partial class FrmHangman : Form
     {
+        // An array with all pictures of the hangingman
         private Bitmap[] hangImages = { Hangman.Properties.Resources._1, Hangman.Properties.Resources._2, Hangman.Properties.Resources._3, Hangman.Properties.Resources._4, Hangman.Properties.Resources._5, Hangman.Properties.Resources._6, Hangman.Properties.Resources._7 };
 
         private int wrongGuesses = 0;
@@ -30,23 +31,29 @@ namespace Hangman
             InitializeComponent();
         }
 
+
+        /*
+         * The function reads from a text file all the words and inserts them into a new array called words.
+        */
         private void loadWords()
         {
             char[] delimiterChar = { ',' };
-            string[] readWords = File.ReadAllLines("Words.txt");
+            string[] readLines = File.ReadAllLines("Words.txt");
             
         
-            words = new string[readWords.Length];
+            words = new string[readLines.Length];
             int index = 0;
 
-            foreach (string s in readWords)
+            foreach (string s in readLines)
             {
                 string [] line = s.Split(delimiterChar);
-                words[index++] = line[1];
-                
+                words[index++] = line[1];    
             }
         }
 
+        /*
+         * The function randomly pulls out the number of the word you need to guess and creates a string that represents the lines on the screen.
+         */
         private void setUpWordChoice()
         {
             wrongGuesses = 0;
@@ -62,7 +69,9 @@ namespace Hangman
             displayCopy();
         }
 
-
+        /*
+         * The function displays the word lines on the screen. 
+         */
         private void displayCopy()
         {
             lblShowWord.Text = "";
@@ -74,7 +83,9 @@ namespace Hangman
             }
         }
 
-
+        /*
+         * The function represents the player's choice. Displays the man's pictures on the screen depending on the player's choice and updates the word if the player was right. 
+         */
         private void guessClick(object sender, EventArgs e)
         {
             Button choice = sender as Button;
@@ -114,15 +125,13 @@ namespace Hangman
                 {
                     b.Enabled = false;
                 }
-
-
-
             }
 
             if(copyCurrent.Equals(currentWord))
             {
                 lblResult.Text = "You Win!!";
             }
+
         }
 
         private void FrmHangman_Load(object sender, EventArgs e)
@@ -131,11 +140,13 @@ namespace Hangman
             setUpWordChoice();
         }
 
+        /*
+         * The function restart the game 
+         */
         private void restart_Click(object sender, EventArgs e)
         {
             setUpWordChoice();
             lblResult.Text = "";
-
             
             foreach (Button b in Controls.OfType<Button>()) 
             {
