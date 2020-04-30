@@ -11,7 +11,7 @@ using System.IO;
 
 
 /*
- * https://www.youtube.com/watch?v=kbAksctUEzc
+ * I was assisted by this video: https://www.youtube.com/watch?v=kbAksctUEzc
  * */
 
 namespace Hangman
