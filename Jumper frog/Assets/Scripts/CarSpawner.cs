@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CarSpawner : MonoBehaviour
 {
-    [SerializeField] Mover prefabToSpawn;
+    [SerializeField] Mover[] prefabToSpawn;
     [SerializeField] Vector3 velocityOfSpawnedObject;
     [Tooltip("Minimum time between consecutive spawns, in seconds")] [SerializeField] float minTimeBetweenSpawns = 1f;
     [Tooltip("Maximum time between consecutive spawns, in seconds")] [SerializeField] float maxTimeBetweenSpawns = 3f;
-    [Tooltip("Maximum distance in X between spawner and spawned objects, in units")] [SerializeField] float maxXDistance = 0.5f;
+    [Tooltip("Maximum distance in Z between spawner and spawned objects, in units")] [SerializeField] float maxZDistance = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +23,13 @@ public class CarSpawner : MonoBehaviour
             float timeBetweenSpawns = Random.Range(minTimeBetweenSpawns, maxTimeBetweenSpawns);
             yield return new WaitForSeconds(timeBetweenSpawns);
             Vector3 positionOfSpawnedObject = new Vector3(
-                transform.position.x + Random.Range(-maxXDistance, +maxXDistance),
+                transform.position.x,
                 transform.position.y,
-                transform.position.z);
-            GameObject newObject = Instantiate(prefabToSpawn.gameObject, positionOfSpawnedObject, Quaternion.identity);
-            newObject.GetComponent<Transform>().Rotate(0, -90, 0);
+                transform.position.z + Random.Range(-maxZDistance, +maxZDistance));
+            var random_prefab = Random.Range(0, prefabToSpawn.Length);
+            GameObject pre = prefabToSpawn[random_prefab].gameObject;
+            GameObject newObject = Instantiate(pre, positionOfSpawnedObject, Quaternion.identity);
+            newObject.GetComponent<Transform>().Rotate(0, -270, 0);
             newObject.GetComponent<Mover>().SetVelocity(velocityOfSpawnedObject);
         }
     }
