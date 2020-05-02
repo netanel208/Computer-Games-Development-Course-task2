@@ -26,4 +26,25 @@ public class TimedSpawnerRandom: MonoBehaviour {
             newObject.GetComponent<Mover>().SetVelocity(velocityOfSpawnedObject);
         }
     }
+
+    public void SetVelocityOfSpawnedObject(Vector3 vec)
+    {
+        this.velocityOfSpawnedObject = vec;
+    }
+
+    public void SetmaxTimeBetweenSpawns(float time)
+    {
+        this.maxTimeBetweenSpawns = time;
+    }
+
+    public float GetaxTimeBetweenSpawns()
+    {
+        return maxTimeBetweenSpawns;
+    }
+
+    public Vector3 GetVelocityOfSpawnedObject()
+    {
+        return velocityOfSpawnedObject;
+    }
+
 }
