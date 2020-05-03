@@ -33,18 +33,22 @@ public class Mover : MonoBehaviour
         }
         else
         {
-            transform.position -= velocity * Time.deltaTime;
+            transform.position += velocity * Time.deltaTime;
             var next_transform = transform.position;
             if (next_transform.x < min_x_bound)
             {
                 Destroy(this.gameObject);
             }
         }
-
     }
 
     public void SetVelocity(Vector3 newVelocity)
     {
         this.velocity = newVelocity;
+    }
+
+    public void SetDirection(bool dir)
+    {
+        this.direction = dir;
     }
 }

@@ -25,11 +25,13 @@ public class CarSpawnerLeft2Right : MonoBehaviour
                 transform.position.x,
                 transform.position.y, transform.position.z);
             // transform.position.z + Random.Range(-maxZDistance, +maxZDistance));
-            var random_prefab = Random.Range(0, prefabToSpawn.Length);
+            int random_prefab = Random.Range(0, prefabToSpawn.Length-1);
             GameObject pre = prefabToSpawn[random_prefab].gameObject;
             GameObject newObject = Instantiate(pre, positionOfSpawnedObject, Quaternion.identity);
             newObject.GetComponent<Transform>().Rotate(0, 270, 0);
             newObject.GetComponent<Mover>().SetVelocity(velocityOfSpawnedObject);
+            bool is_leftToRight = true;
+            newObject.GetComponent<Mover>().SetDirection(is_leftToRight);
         }
     }
 }

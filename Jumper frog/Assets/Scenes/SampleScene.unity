@@ -601,7 +601,7 @@ MonoBehaviour:
   - {fileID: -4130449737729912342, guid: f463242ba59e68243b7a693d4f0cfc18, type: 3}
   - {fileID: -8207209010480303497, guid: 50477af197889084e8a6d97f2b73b73b, type: 3}
   velocityOfSpawnedObject: {x: 3, y: 0, z: 0}
-  minTimeBetweenSpawns: 1.5
+  minTimeBetweenSpawns: 3
   maxTimeBetweenSpawns: 3.5
 --- !u!4 &582671234
 Transform:
@@ -817,7 +817,7 @@ MonoBehaviour:
   - {fileID: -4130449737729912342, guid: f463242ba59e68243b7a693d4f0cfc18, type: 3}
   - {fileID: -8207209010480303497, guid: 50477af197889084e8a6d97f2b73b73b, type: 3}
   velocityOfSpawnedObject: {x: 3, y: 0, z: 0}
-  minTimeBetweenSpawns: 1.5
+  minTimeBetweenSpawns: 2
   maxTimeBetweenSpawns: 3.5
 --- !u!4 &798343922
 Transform:
@@ -1059,13 +1059,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.006400732, y: 0.95801604, z: -0.28662264, w: 0.0034236673}
-  m_LocalPosition: {x: -0.03, y: 3.16, z: 10.43}
+  m_LocalRotation: {x: -0.0022529953, y: 0.9509792, z: -0.3090415, w: -0.011272419}
+  m_LocalPosition: {x: -0.04, y: 3.5, z: 10.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 33.308002, y: 179.29901, z: -0.975}
+  m_LocalEulerAnglesHint: {x: 36.004, y: 181.42, z: 0.19000001}
 --- !u!1001 &989734204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1234,6 +1234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d774c0b8672e945aad54c14f02ec3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
 --- !u!1001 &1074982002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1812,9 +1813,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7257dce822b9d0d438e5552e1ed417c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: []
-  velocityOfSpawnedObject: {x: 0, y: 0, z: 0}
-  minTimeBetweenSpawns: 1.5
+  prefabToSpawn:
+  - {fileID: 5814057248756387971, guid: fc4245223e4122142bb14239d44230ef, type: 3}
+  - {fileID: -7625297605395997541, guid: 34941e62fdb557544ada8af1b5333ae0, type: 3}
+  - {fileID: 2571591091118231327, guid: 0ae65270c30153049ab49eb3ebf070d6, type: 3}
+  - {fileID: 6094269165955522900, guid: 2dc42346e5313b34c93d598a61994629, type: 3}
+  - {fileID: 6643991744078701748, guid: 512151c1530b99343a884b12ee9c5e1e, type: 3}
+  - {fileID: 3200884158890777655, guid: ab26596a331d7ee43a3e9d29e2be9f84, type: 3}
+  - {fileID: -4130449737729912342, guid: f463242ba59e68243b7a693d4f0cfc18, type: 3}
+  - {fileID: -8207209010480303497, guid: 50477af197889084e8a6d97f2b73b73b, type: 3}
+  velocityOfSpawnedObject: {x: -3, y: 0, z: 0}
+  minTimeBetweenSpawns: 2
   maxTimeBetweenSpawns: 3.5
 --- !u!4 &1471793097
 Transform:
@@ -1824,7 +1833,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471793095}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5.62, y: 0, z: 3.81}
+  m_LocalPosition: {x: 9.89, y: 0, z: 3.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

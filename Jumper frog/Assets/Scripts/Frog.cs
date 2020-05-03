@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Frog : MonoBehaviour
 {
+    [SerializeField] float speed = 8;
     Animator anim;
     // Start is called before the first frame update
     void Start()
@@ -18,15 +19,15 @@ public class Frog : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             anim.SetTrigger("Jump");
-            transform.position += (Vector3.back) * Time.deltaTime * 8;
+            transform.position += (Vector3.back) * Time.deltaTime * speed;
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.position += (Vector3.right) * Time.deltaTime * 8;
+            transform.position += (Vector3.right) * Time.deltaTime * speed;
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.position += (Vector3.left) * Time.deltaTime * 8;
+            transform.position += (Vector3.left) * Time.deltaTime * speed;
         }
     }
 
@@ -34,13 +35,18 @@ public class Frog : MonoBehaviour
     {
         if (other.gameObject.tag == "vehicle")
         {  
-            Debug.Log("Collide !!!!!!!!!!!");
+            Debug.Log("You died!");
             Destroy(this.gameObject);
         }
         else if(other.gameObject.tag == "Trees")
         {
             Debug.Log("You tuch the tree. \nSpawner will destroyed!");
-            Destroy(GameObject.FindGameObjectWithTag("spawner").gameObject);
+            var arr = GameObject.FindGameObjectsWithTag("spawner");
+            for (int i=0; i<arr.Length; i++)
+            {
+                Destroy(arr[i]);
+            }
+            //Destroy(GameObject.FindGameObjectsWithTag("spawner"));
         }
     }
 }
