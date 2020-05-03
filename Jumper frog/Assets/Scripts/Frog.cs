@@ -34,19 +34,25 @@ public class Frog : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "vehicle")
-        {  
+        {
             Debug.Log("You died!");
             Destroy(this.gameObject);
+            var arr1 = GameObject.FindGameObjectsWithTag("spawner");
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                Destroy(arr1[i]);
+
+            }
         }
-        else if(other.gameObject.tag == "Trees")
+        else if (other.gameObject.tag == "Trees")
         {
             Debug.Log("You tuch the tree. \nSpawner will destroyed!");
-            var arr = GameObject.FindGameObjectsWithTag("spawner");
-            for (int i=0; i<arr.Length; i++)
+            var arr2 = GameObject.FindGameObjectsWithTag("spawner");
+            for (int i = 0; i < arr2.Length; i++)
             {
-                Destroy(arr[i]);
+                Destroy(arr2[i]);
             }
-            //Destroy(GameObject.FindGameObjectsWithTag("spawner"));
+
         }
     }
 }

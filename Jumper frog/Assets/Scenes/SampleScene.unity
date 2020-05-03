@@ -1822,7 +1822,7 @@ MonoBehaviour:
   - {fileID: 3200884158890777655, guid: ab26596a331d7ee43a3e9d29e2be9f84, type: 3}
   - {fileID: -4130449737729912342, guid: f463242ba59e68243b7a693d4f0cfc18, type: 3}
   - {fileID: -8207209010480303497, guid: 50477af197889084e8a6d97f2b73b73b, type: 3}
-  velocityOfSpawnedObject: {x: -3, y: 0, z: 0}
+  velocityOfSpawnedObject: {x: 0, y: 0, z: 0}
   minTimeBetweenSpawns: 2
   maxTimeBetweenSpawns: 3.5
 --- !u!4 &1471793097

@@ -8,7 +8,7 @@ public class CarSpawner : MonoBehaviour
     [SerializeField] Vector3 velocityOfSpawnedObject;
     [Tooltip("Minimum time between consecutive spawns, in seconds")] [SerializeField] float minTimeBetweenSpawns = 1.5f;
     [Tooltip("Maximum time between consecutive spawns, in seconds")] [SerializeField] float maxTimeBetweenSpawns = 3.5f;
- //   [Tooltip("Maximum distance in Z between spawner and spawned objects, in units")] [SerializeField] float maxZDistance = 0.5f;
+ 
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class CarSpawner : MonoBehaviour
             Vector3 positionOfSpawnedObject = new Vector3(
                 transform.position.x,
                 transform.position.y, transform.position.z);
-               // transform.position.z + Random.Range(-maxZDistance, +maxZDistance));
+               
             var random_prefab = Random.Range(0, prefabToSpawn.Length);
             GameObject pre = prefabToSpawn[random_prefab].gameObject;
             GameObject newObject = Instantiate(pre, positionOfSpawnedObject, Quaternion.identity);

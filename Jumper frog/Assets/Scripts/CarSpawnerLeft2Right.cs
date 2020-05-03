@@ -13,6 +13,7 @@ public class CarSpawnerLeft2Right : MonoBehaviour
     void Start()
     {
         this.StartCoroutine(SpawnRoutine());
+        velocityOfSpawnedObject = new Vector3(-3,0,0);
     }
 
     private IEnumerator SpawnRoutine()
@@ -24,7 +25,7 @@ public class CarSpawnerLeft2Right : MonoBehaviour
             Vector3 positionOfSpawnedObject = new Vector3(
                 transform.position.x,
                 transform.position.y, transform.position.z);
-            // transform.position.z + Random.Range(-maxZDistance, +maxZDistance));
+
             int random_prefab = Random.Range(0, prefabToSpawn.Length-1);
             GameObject pre = prefabToSpawn[random_prefab].gameObject;
             GameObject newObject = Instantiate(pre, positionOfSpawnedObject, Quaternion.identity);
