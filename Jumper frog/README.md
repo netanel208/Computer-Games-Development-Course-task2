@@ -21,8 +21,14 @@ You need to help the frog get from the city to the forest through a road where v
   * If the frog collides with a vehicle it is dead (destroyed) - a loss.
   
   ![GitHub Logo](https://github.com/OdeliaHochman/Computer-Games-Development-Course-task2/blob/master/Jumper%20frog/images/Game-died.PNG)
+  
+  ![image](https://user-images.githubusercontent.com/45036697/80921469-42d77180-8d7f-11ea-9dad-2cb1cb1a54a9.png)
+  
+  
   * If the frog did not crash into any vehicles and managed to reach the forest (crash into the trees) the spiders are destroyed - a victory.
   
   ![GitHub Logo](https://github.com/OdeliaHochman/Computer-Games-Development-Course-task2/blob/master/Jumper%20frog/images/Game-win.PNG)
+  
+  ![image](https://user-images.githubusercontent.com/45036697/80921498-73b7a680-8d7f-11ea-95e7-1e4a59769425.png)
 
 
