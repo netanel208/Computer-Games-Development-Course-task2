@@ -1,3 +1,3 @@
-# Computer-Games-Development-Course-task2
+# Jumper frog
 
-* Hangman game
+* You need to help the frog get from the city to the forest through a road where vehicles are being driven. You must avoid the vehicles and prevent them from damaging the frog.
