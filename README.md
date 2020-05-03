@@ -2,7 +2,7 @@
 
 * Hangman game
 
-* Jumper frog   
+* Jumper frog game  
 
 * Collisions
 
